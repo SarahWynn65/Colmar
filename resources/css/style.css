@@ -21,18 +21,44 @@ nav { /* found in header and footer */
   margin-right: 1.5rem;
 }
 
+.site-container {
+  max-width: 1024px; /* max-width rather than width so that sections can react to browser size changes. */
+  margin-left: auto; /* These center the .site-container in the browser. */
+  margin-right: auto;
+}
+
+.picture-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* 100% of site-container */
+  max-height: 880px; /* This is somewhat arbitrary */
+  background-color: grey;
+  overflow: hidden;
+}
+
+.picture-section img { /* main section images are all the same width, but different heights */
+  max-width: 60%; /* redline says 60%, but is also says 60%+40%+48px=100% */
+  height: auto;
+  padding: 2rem 1.5rem;
+  /* overflow: hidden; */
+}
+
 /* Header */
 
 header { /* header contains #logo and nav */
-  display: flex; /* flex rather than inline-flex as we want it to span the whole page. */
-  flex-direction: row;
   position: fixed;
   z-index: 100;
   height: 4rem;
   width: 100%;
   background-color: white; /* ?change to collegiate colors */
+}
+
+header .site-container {
+  display: flex; /* flex rather than inline-flex as we want it to span the whole page. */
+  flex-direction: row;
   justify-content: space-between; /* Put #logo at one end and nav at other. */
   align-items: center; /* Center content (#logo and nav) vertically. */
+  height: 100%; /* same height as header */
 }
 
 /* logo contains image and name */
@@ -44,7 +70,7 @@ header #logo {
 
 #logo img {
   vertical-align: middle;
-  height: 2rem;
+  height: 2rem; /* icon */
   margin-left: 1.5rem;
   margin-right: 0.5rem;
 }
@@ -58,15 +84,66 @@ header #logo {
 }
 
 header a {
-    margin-left: 1rem;
+  border-width: 1rem; /* not working */
+  border-color: white blue;
   }
 
 /* Landing Page */
 
-.picture-section {
-
+#landing-page { /* this is a specific .picture-section */
+  position: relative;
+  top: 4rem; /* to prevent the top of the picture from being hidden by the header which is 4rem high. */
 }
 
-.picture-section img {
+#landing-page img { /* original size 1104px × 816px, specific .picture-section img */
+  width: 60%; /* specified but not correct */
+}
+
+#landing-page div {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center; /* Put contents at vertical center */
+  align-items: center; /* Center items horizontally */
+  width: 40%;/* specified but not correct */
+}
+
+/* button {
+  color: black;
+  height: 2rem;
+  width: auto;
+  background-color: yellow;
 
 }
+button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+} */
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1rem;
+  height: 3rem;
+}
+
+footer span {
+  padding-left: 1.5rem;
+}
+
+footer a {
+    margin-left: 1rem;
+  }
