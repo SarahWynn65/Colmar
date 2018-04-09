@@ -1,6 +1,6 @@
-/* Stylesheet for Colmar Academy project by Sarah Wynn 2018 */
+/* Stylesheet for Colmar Academy project by Sarah Wynn Apr 2018 */
 
-/* Universal Rules*/
+/* ---------------- Universal Rules ---------------- */
 html {
   font-size: 16px;
 }
@@ -30,24 +30,47 @@ nav { /* found in header and footer */
 
 .site-container {
   max-width: 1024px; /* max-width rather than width so that sections can react to browser size changes. */
-  margin-left: auto; /* These center the .site-container in the browser. */
+  margin-left: auto; /* These horizontally center the .site-container in the browser. */
   margin-right: auto;
 }
 
 .picture-section {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%; /* 100% of site-container */
-  max-height: 880px; /* This is somewhat arbitrary */
-  background-color: grey;
-  overflow: hidden;
+  /* height is determined in the individual picture-section */
+}
+
+.mini-picture-section {
+
 }
 
 .picture-section img { /* main section images are all the same width, but different heights */
-  max-width: 60%; /* redline says 60%, but is also says 60%+40%+48px=100% */
+  width: 100%; /* redline says 60%, but is also says 60%+40%+48px=100% */
   height: auto;
-  padding: 2rem 1.5rem;
+  /* previously this was margin: auto; ... but maybe we should have 2nd picture-section off-set by 4rem, too */
+  margin-bottom: auto; /* this has to be auto rather than set to allow the image to scale properly. */
+  overflow: hidden;
 }
+
+  /* #practicing-page {
+    position: sticky;
+    top: 4rem;
+    background-color: white;
+  }
+
+  #learning-page {
+    position: sticky;
+    top: 4rem;
+    background-color: lightgrey;
+  }
+
+  #thesis-page {
+    position: sticky;
+    top: 4rem;
+    background-color: white;
+  } */
 
 @media only screen and (max-width: 607px) {
   h3 {
@@ -55,7 +78,7 @@ nav { /* found in header and footer */
   }
 }
 
-/* Header */
+/* ---------------- Header Page ---------------- */
 
 header { /* header contains #logo and nav */
   position: fixed;
@@ -100,31 +123,42 @@ header a {
   border-color: white blue;
   }
 
-/* Landing Page */
+/* ---------------- Landing Page ---------------- */
 
 #landing-page { /* this is a specific .picture-section */
-  /* position: fixed; */
-  top: 4rem; /* to prevent the top of the picture from being hidden by the header which is 4rem high. */
+  flex-shrink: 1;
+  background-color: grey;
 }
 
-#landing-page img { /* original size 1104px × 816px, specific .picture-section img */
-  width: 60%; /* specified but not correct */
+/* The specs specify 60% width for :first-child, and 40% width for :second-child but we need to include margins/borders/padding */
+#landing-page div:first-child {
+  width: 55%; /* full-size with borders: 611.2px (59.6875%)*/
+  height: auto;
 }
 
-#landing-page div {
+#landing-page img { /* inside :first-child */
+  border-top: 6rem solid grey; /* 2rem shown below 4rem of header */
+  border-right: 1.5rem solid grey;
+  border-bottom: 2rem solid grey;
+  border-left: 1.5rem solid grey;
+}
+
+#landing-page div:last-child {
   display: inline-flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center; /* Put contents at vertical center */
-  align-items: center; /* Center items horizontally */
-  width: 40%;/* specified but not correct */
+  width: 35%; /* 40% specified but not correct (see :first-child comment) */
+  height: auto;
+  background-color: grey;
+  padding-top: 4rem; /* to adjust vertical center due to vertical offset for header. */
+  padding-right: 3.5rem;
 }
 
 button {
   color: white;
   padding: 8px 48px;
   background-color: black;
-  margin: 2rem;
+  margin: 2rem 0;
 
   border: none;
   border-radius: 5px;
@@ -150,7 +184,25 @@ button {
   box-shadow: 0 9px #999;
 } */
 
-/* Learning Page */
+/* ---------------- Practicing Page ---------------- */
+
+#practicing-page {
+  background-color: white;
+}
+
+#practicing-page img {
+  border-top: 2rem solid white;
+  border-right: 1.5rem solid white;
+  border-bottom: 2rem solid white;
+  border-left: 1.5rem solid white;
+  margin-top: 2rem;
+}
+
+#practicing-page article {
+
+}
+
+/* ---------------- Learning Page ---------------- */
 
 #learning-page { /* a specific section */
   background-color: lightgrey;
@@ -227,27 +279,11 @@ article .text {
   article p {
     display: none;
   }
+
+
 }
 
-/* #practicing-page {
-  position: sticky;
-  top: 4rem;
-  background-color: white;
-}
-
-#learning-page {
-  position: sticky;
-  top: 4rem;
-  background-color: lightgrey;
-}
-
-#thesis-page {
-  position: sticky;
-  top: 4rem;
-  background-color: white;
-} */
-
-/* Footer */
+/* ---------------- Footer Page ---------------- */
 
 footer {
   display: flex;
