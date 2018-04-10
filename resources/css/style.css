@@ -1,6 +1,11 @@
 /* Stylesheet for Colmar Academy project by Sarah Wynn Apr 2018 */
 
 /* ---------------- Universal Rules ---------------- */
+/* colors to try:
+#63391C brown and #FFCB55 gold
+#615E37 dark green and #FFCB55 yellow gold
+#E88542 burnt orange and #FFCB55 yellow gold
+*/
 html {
   font-size: 16px;
 }
@@ -22,10 +27,6 @@ h4 {
 
 p {
   font-size: 1rem;
-}
-
-nav { /* found in header and footer */
-  margin-right: 1.5rem;
 }
 
 .site-container {
@@ -54,22 +55,26 @@ nav { /* found in header and footer */
   overflow: hidden;
 }
 
+.mobile {
+  display: none;
+}
+
   /* #practicing-page {
     position: sticky;
     top: 4rem;
-    background-color: white;
+    background-color: #615E37;
   }
 
   #learning-page {
     position: sticky;
     top: 4rem;
-    background-color: lightgrey;
+    background-color: #FFCB55;
   }
 
   #thesis-page {
     position: sticky;
     top: 4rem;
-    background-color: white;
+    background-color: #615E37;
   } */
 
 @media only screen and (max-width: 607px) {
@@ -85,7 +90,7 @@ header { /* header contains #logo and nav */
   z-index: 100;
   height: 4rem;
   width: 100%;
-  background-color: white; /* ?change to collegiate colors */
+  background-color: #FFCB55; /* ?change to collegiate colors */
 }
 
 header .site-container {
@@ -118,16 +123,31 @@ header #logo {
   font-weight: bold;
 }
 
+header nav {
+  background-color: #615E37;
+}
+
+/* the redline shows no space between color stripes and navigation items, but
+this looks crowded and inaccessible, so I've added space. */
 header a {
-  border-width: 1rem; /* not working */
-  border-color: white blue;
+  display: inline-block; /* allows us to manipulate size of inline element */
+  background-color: #FFCB55;
+  height: 4rem; /* extends the background color from top to bottom */
+  line-height: 4rem; /* vertically centers the text */
+  margin-left: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  }
+
+  header a:first-child {
+    margin-left: 0; /* removes the first unwanted color margin */
   }
 
 /* ---------------- Landing Page ---------------- */
 
 #landing-page { /* this is a specific .picture-section */
   flex-shrink: 1;
-  background-color: grey;
+  background-color: #615E37; /* ? not working */
 }
 
 /* The specs specify 60% width for :first-child, and 40% width for :second-child but we need to include margins/borders/padding */
@@ -137,10 +157,10 @@ header a {
 }
 
 #landing-page img { /* inside :first-child */
-  border-top: 6rem solid grey; /* 2rem shown below 4rem of header */
-  border-right: 1.5rem solid grey;
-  border-bottom: 2rem solid grey;
-  border-left: 1.5rem solid grey;
+  border-top: 6rem solid #615E37; /* 2rem shown below 4rem of header */
+  border-right: 1.5rem solid #615E37;
+  border-bottom: 2rem solid #615E37;
+  border-left: 1.5rem solid #615E37;
 }
 
 #landing-page div:last-child {
@@ -149,13 +169,14 @@ header a {
   justify-content: center; /* Put contents at vertical center */
   width: 35%; /* 40% specified but not correct (see :first-child comment) */
   height: auto;
-  background-color: grey;
+  color: #FFCB55;
+  background-color: #615E37;
   padding-top: 4rem; /* to adjust vertical center due to vertical offset for header. */
   padding-right: 3.5rem;
 }
 
 button {
-  color: white;
+  color: gold;
   padding: 8px 48px;
   background-color: black;
   margin: 2rem 0;
@@ -166,7 +187,8 @@ button {
 }
 
 button:hover {
-    background-color: grey;
+  color: #615E37;
+    background-color: #FFCB55;
   }
 /*
 button {
@@ -187,27 +209,57 @@ button {
 /* ---------------- Practicing Page ---------------- */
 
 #practicing-page {
-  background-color: white;
+  flex-shrink: 1;
+  background-color: #FFCB55;
+}
+
+#practicing-page div:first-child {
+  width: 55%; /* full-size with borders: 611.2px (59.6875%) */
+  height: auto;
+  border: 1px solid #FFCB55;
 }
 
 #practicing-page img {
-  border-top: 2rem solid white;
-  border-right: 1.5rem solid white;
-  border-bottom: 2rem solid white;
-  border-left: 1.5rem solid white;
-  margin-top: 2rem;
+  border-top: 2rem solid #FFCB55;
+  border-right: 1.5rem solid #FFCB55;
+  border-bottom: 2rem solid #FFCB55;
+  border-left: 1.5rem solid #FFCB55;
+}
+
+#practicing-page div:last-child {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center; /* Put contents at vertical center */
+  width: 35%; /* 40% specified but not correct (see :first-child comment) */
+  height: auto;
+  background-color: #FFCB55;
 }
 
 #practicing-page article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+  }
 
+#practicing-page article img {
+  width: 35%;
+  height: auto;
 }
+
+#practicing-page article:last-child {
+  background-color: #FFCB55;
+}
+
 
 /* ---------------- Learning Page ---------------- */
 
 #learning-page { /* a specific section */
-  background-color: lightgrey;
-  /* margin-top: 2rem; */
-  /* margin-bottom: 2rem; */
+  background-color: #615E37;
+}
+
+#learning-page h3 {
+  color: #FFCB55;
 }
 
 #gallery-section { /* immediate child of .site-container */
@@ -216,27 +268,26 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%; /* 100% of .site-container */
-  /* margin-bottom: 2rem; */
 }
 
-article {
+#gallery-section article {
   display: inline-block;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 2rem;
   width: 17rem; /* site-container minus img widths and margins divided by 3 */
   height: 16.25rem; /* needs adjusting after text style finalized */
-  background-color: white;
+  background-color: #FFCB55;
   overflow: hidden;
 }
 
-article img {
+#gallery-section article img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-article .text {
+#gallery-section article .text {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -247,7 +298,7 @@ article .text {
 @media only screen and (max-width: 607px)
 {
   #learning-page {
-    background-color: white;
+    background-color: gold;
     margin-bottom: 2rem;
   }
 
@@ -264,12 +315,12 @@ article .text {
 
   article .text {
     min-width: 15.125rem; /* prevents titles from wrapping */
-    background-color: lightgrey;
+    background-color: paleblue;
     margin: 0.25rem 1rem; /* puts 0.5rem space between course titles, and prevents narrowing screen from going from single column full articles, to double column headings */
   }
 
   article h4 {
-    /* background-color: lightgrey; */
+    /* background-color: paleblue; */
     /* padding-top: 1rem;
     padding-bottom: 1.5rem;
     padding-left: 1rem; */
@@ -279,8 +330,58 @@ article .text {
   article p {
     display: none;
   }
+}
 
+/* ---------------- Thesis Exhibit Page ---------------- */
 
+#thesis-page {
+  flex-shrink: 1;
+  background-color: #FFCB55;
+  padding-bottom: 2rem;
+}
+
+#thesis-page .video-container {
+  width: 55%; /* full-size with borders: 611.2px (59.6875%) */
+  height: auto;
+  /* border: 1px solid #FFCB55; */
+}
+
+/* width and height set here so percentages can be used and video size is responsive to browser size. */
+video {
+  width: 100%; /* 100% of 55% declared in .video-container */
+  height: auto;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+#thesis-page #second-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Put contents at vertical center */
+  width: 35%; /* 40% specified but not correct (see :first-child comment) */
+  height: auto;
+  background-color: #FFCB55;
+  color: #615E37;
+  /*
+  padding-top: 4rem; *//* to adjust vertical center due to vertical offset for header.
+  padding-right: 3.5rem;*/
+}
+
+#thesis-page article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+#thesis-page article img {
+  width: 35%;
+  height: auto;
+}
+
+#thesis-page article div {
+  background-color: #FFCB55;
 }
 
 /* ---------------- Footer Page ---------------- */
@@ -291,12 +392,19 @@ footer {
   justify-content: space-between;
   padding-top: 1rem;
   height: 3rem;
+  color: #FFCB55;
+  background-color: #615E37;
 }
 
 footer span {
   padding-left: 1.5rem;
 }
 
+footer nav {
+  margin-right: 1.5rem;
+}
+
 footer a {
-    margin-left: 1rem;
-  }
+  color: #FFCB55;
+  margin-left: 1rem;
+}
