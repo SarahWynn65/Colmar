@@ -3,6 +3,7 @@
 <head profile="https://www.w3.org/2005/10/profile">
   <link href="resources/css/reset.css" type="text/css" rel="stylesheet"/>
   <link href="resources/css/style.css" type="text/css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700|Work+Sans:400,700" rel="stylesheet">
   <link href="resources/images/ic-logo.png" type="image/png" rel="icon"/>
   <title>Colmar Academy</title>
 </head>
@@ -44,10 +45,14 @@
   <div class="site-container">
     <section id="practicing-page" class="picture-section">
       <div>
-        <img src="resources/images/information-main.jpg" alt="Man in park studying"/>
-        <h3>It doesn't hurt to keep practicing</h3>
-        <p>"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec consequat neque. Sed non accumsan urna. Phasellus sed consquat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula."</p>
-        <p><br>Emanuel, Sr Strategist at Hiring.com</p>
+
+          <img src="resources/images/information-main.jpg" alt="Man in park studying"/>
+          <p>
+            <h3>It doesn't hurt to keep practicing</h3>
+            <blockquote>"Curabitur vitae libero in ipsum porttitor consequat. Aliquam et commodo lectus, nec consequat neque. Sed non accumsan urna. Phasellus sed consquat ex. Etiam eget magna laoreet, efficitur dolor consequat, tristique ligula."</blockquote>
+            <p><br>Emanuel, Sr Strategist at Hiring.com</p>
+          </p>
+
       </div>
       <div>
         <article>
@@ -56,7 +61,7 @@
           <div>
             <h4>Orientation date</h4>
             <p>Tue 10/11 & Wed 10/12: 8am-3pm</p>
-            <p>Read more</p>
+            <a href="#">Read more</a>
           </div>
         </article>
         <article>
@@ -65,6 +70,7 @@
           <div>
             <h4>Our campus</h4>
             <p>Find which campus is close by you</p>
+            <a href="#">Read more</a>
           </div>
         </article>
         <article>
@@ -73,7 +79,7 @@
           <div>
             <h4>Our guest lecture</h4>
             <p>Join a keynote with Olive Sack about music in medical treatment</p>
-            <p>Read more</p>
+            <a href="#">Read more</a>
           </div>
         </article>
       </div>
@@ -139,9 +145,11 @@
 
   <!-- Thesis Page -->
   <div class="site-container">
+
     <section id="thesis-page" class="picture-section">
-      <div class="video-container">
-        <h3>Thesis exhibit</h3>
+      <h3>Thesis exhibit</h3>
+      <div id="thesis-body">
+        <div id="first-column" class="video-container">
         <video playsinline  controls>
           <source src="resources/videos/thesis.mp4">
             Your browser does not support this video format.
@@ -160,13 +168,14 @@
           </div>
         </article>
         <article>
-          <img src="resources/images/thesis-now-and-then.jpg" alt="City sky scrappers from the air"
-          <div>
-            <h4>Now and then</h4>
-            <p>Research study about New York</p>
-          </div>
+          <img src="resources/images/thesis-now-and-then.jpg" alt="City sky scrappers from the air"/>
+            <div>
+              <h4>Now and then</h4>
+              <p>Research study about New York</p>
+            </div>
         </article>
       </div>
+    </div>
     </section>
   </div>
 

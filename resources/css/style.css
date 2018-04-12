@@ -1,32 +1,97 @@
 /* Stylesheet for Colmar Academy project by Sarah Wynn Apr 2018 */
 
 /* ---------------- Universal Rules ---------------- */
-/* colors to try:
-#63391C brown and #FFCB55 gold
-#615E37 dark green and #FFCB55 yellow gold
-#E88542 burnt orange and #FFCB55 yellow gold
-*/
+
+
+
+/* latin */
+@font-face {
+  font-family: 'Almendra';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Almendra Bold Italic'), local('Almendra-BoldItalic'), url(https://fonts.gstatic.com/s/almendra/v10/H4chBXKAlMnTn0CskxY48Ae9kqGWbhppHtk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Almendra';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Almendra Regular'), local('Almendra-Regular'), url(https://fonts.gstatic.com/s/almendra/v10/H4ckBXKAlMnTn0CskxY9yL6SgK62.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Aref Ruqaa Regular'), local('ArefRuqaa-Regular'), url(https://fonts.gstatic.com/s/arefruqaa/v5/WwkbxPW1E165rajQKDulIIcoVfg61Nc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Aref Ruqaa';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Aref Ruqaa Bold'), local('ArefRuqaa-Bold'), url(https://fonts.gstatic.com/s/arefruqaa/v5/WwkYxPW1E165rajQKDulKDwNQNUY2f34Fdg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Philosopher Bold Italic'), local('Philosopher-BoldItalic'), url(https://fonts.gstatic.com/s/philosopher/v9/vEFK2_5QCwIS4_Dhez5jcWBrd_QZwtW_WpzEpMs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v9/vEFV2_5QCwIS4_Dhez5jcWBuT0020Nqf.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 html {
+  /* font-family: 'Philosopher', sans-serif; */
+  /* font-family: 'Almendra', serif; */
+
+/* font-family: 'Work Sans', sans-serif; */
+  font-family: 'Karla', sans-serif;
   font-size: 16px;
+  background-color: #2E2B10;
 }
 
 h2 {
   font-size: 2rem;
+  padding-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  text-align: center;
+  text-align: center; /* Looks nicer than the left-aligned heading specified */
 }
 
 h4 {
   font-weight: bold;
+  padding-bottom: 0.5rem;
 }
 
 p {
   font-size: 1rem;
+  line-height: 1.2;
+}
+
+blockquote {
+  line-height: 1.2;
 }
 
 .site-container {
@@ -41,10 +106,6 @@ p {
   justify-content: space-between;
   width: 100%; /* 100% of site-container */
   /* height is determined in the individual picture-section */
-}
-
-.mini-picture-section {
-
 }
 
 .picture-section img { /* main section images are all the same width, but different heights */
@@ -62,19 +123,19 @@ p {
   /* #practicing-page {
     position: sticky;
     top: 4rem;
-    background-color: #615E37;
+    background-color: #4C471A;
   }
 
   #learning-page {
     position: sticky;
     top: 4rem;
-    background-color: #FFCB55;
+    background-color: #FFD459;
   }
 
   #thesis-page {
     position: sticky;
     top: 4rem;
-    background-color: #615E37;
+    background-color: #4C471A;
   } */
 
 @media only screen and (max-width: 607px) {
@@ -90,7 +151,8 @@ header { /* header contains #logo and nav */
   z-index: 100;
   height: 4rem;
   width: 100%;
-  background-color: #FFCB55; /* ?change to collegiate colors */
+  background-color: #FFD459;
+  border-bottom: 1rem solid #4C471A; /* added so the header doesn't look weird on scrolling. */
 }
 
 header .site-container {
@@ -110,13 +172,16 @@ header #logo {
 
 #logo img {
   vertical-align: middle;
-  height: 2rem; /* icon */
+  height: 3rem; /* icon - redline says 2rem but this looks very small */
   margin-left: 1.5rem;
   margin-right: 0.5rem;
 }
 
 #logo span {
-  font-size: 1rem;
+  font-family: 'Philosopher', sans-serif;
+  /* font-family: 'Aref Ruqaa', serif; */
+  /* font-family: 'Almendra', serif; */
+  font-size: 1.5rem; /* redline states 1rem, but this looks too small to me */
 }
 
 #logo #colmar {
@@ -124,14 +189,14 @@ header #logo {
 }
 
 header nav {
-  background-color: #615E37;
+  background-color: #4C471A;
 }
 
 /* the redline shows no space between color stripes and navigation items, but
 this looks crowded and inaccessible, so I've added space. */
 header a {
   display: inline-block; /* allows us to manipulate size of inline element */
-  background-color: #FFCB55;
+  background-color: #FFD459;
   height: 4rem; /* extends the background color from top to bottom */
   line-height: 4rem; /* vertically centers the text */
   margin-left: 1rem;
@@ -147,7 +212,8 @@ header a {
 
 #landing-page { /* this is a specific .picture-section */
   flex-shrink: 1;
-  background-color: #615E37; /* ? not working */
+  background-color: #4C471A; /* ? not working */
+  z-index: 10;
 }
 
 /* The specs specify 60% width for :first-child, and 40% width for :second-child but we need to include margins/borders/padding */
@@ -157,10 +223,10 @@ header a {
 }
 
 #landing-page img { /* inside :first-child */
-  border-top: 6rem solid #615E37; /* 2rem shown below 4rem of header */
-  border-right: 1.5rem solid #615E37;
-  border-bottom: 2rem solid #615E37;
-  border-left: 1.5rem solid #615E37;
+  border-top: 6rem solid #4C471A; /* 2rem shown below 4rem of header */
+  border-right: 1.5rem solid #4C471A;
+  border-bottom: 2rem solid #4C471A;
+  border-left: 1.5rem solid #4C471A;
 }
 
 #landing-page div:last-child {
@@ -169,26 +235,26 @@ header a {
   justify-content: center; /* Put contents at vertical center */
   width: 35%; /* 40% specified but not correct (see :first-child comment) */
   height: auto;
-  color: #FFCB55;
-  background-color: #615E37;
+  color: #FFD459;
+  background-color: #4C471A;
   padding-top: 4rem; /* to adjust vertical center due to vertical offset for header. */
   padding-right: 3.5rem;
 }
 
 button {
-  color: gold;
+  color: #FFD459;
   padding: 8px 48px;
-  background-color: black;
+  background-color: #2E2B10;
   margin: 2rem 0;
 
   border: none;
   border-radius: 5px;
-  box-shadow: 0 2px #999;
+  box-shadow: 0 2px black;
 }
 
 button:hover {
-  color: #615E37;
-    background-color: #FFCB55;
+  color: #4C471A;
+    background-color: #FFD459;
   }
 /*
 button {
@@ -210,29 +276,26 @@ button {
 
 #practicing-page {
   flex-shrink: 1;
-  background-color: #FFCB55;
+  background-color: #FFD459;
+  justify-content: flex-start;
+  z-index: 20;
 }
 
 #practicing-page div:first-child {
   width: 55%; /* full-size with borders: 611.2px (59.6875%) */
   height: auto;
-  border: 1px solid #FFCB55;
-}
-
-#practicing-page img {
-  border-top: 2rem solid #FFCB55;
-  border-right: 1.5rem solid #FFCB55;
-  border-bottom: 2rem solid #FFCB55;
-  border-left: 1.5rem solid #FFCB55;
+  margin: 2rem;
+  border: 1px solid #FFD459;
 }
 
 #practicing-page div:last-child {
   display: inline-flex;
   flex-direction: column;
-  justify-content: center; /* Put contents at vertical center */
+  justify-content: space-around; /* redline specifies 2rem spacing between pictures but vertical even spacing spacing looks better to me */
+  align-items: flex-start;
   width: 35%; /* 40% specified but not correct (see :first-child comment) */
   height: auto;
-  background-color: #FFCB55;
+  background-color: #FFD459;
 }
 
 #practicing-page article {
@@ -245,21 +308,24 @@ button {
 #practicing-page article img {
   width: 35%;
   height: auto;
+  border-right: 1.5rem solid #FFD459;
+  /* border: 0.3rem solid #4C471A; */
 }
 
 #practicing-page article:last-child {
-  background-color: #FFCB55;
+  background-color: #FFD459;
 }
 
 
 /* ---------------- Learning Page ---------------- */
 
 #learning-page { /* a specific section */
-  background-color: #615E37;
+  background-color: #4C471A;
+  z-index: 30;
 }
 
 #learning-page h3 {
-  color: #FFCB55;
+  color: #FFD459;
 }
 
 #gallery-section { /* immediate child of .site-container */
@@ -277,7 +343,7 @@ button {
   margin-bottom: 2rem;
   width: 17rem; /* site-container minus img widths and margins divided by 3 */
   height: 16.25rem; /* needs adjusting after text style finalized */
-  background-color: #FFCB55;
+  background-color: #FFD459;
   overflow: hidden;
 }
 
@@ -335,53 +401,80 @@ button {
 /* ---------------- Thesis Exhibit Page ---------------- */
 
 #thesis-page {
+  display: flex;
+  flex-direction: column;
   flex-shrink: 1;
-  background-color: #FFCB55;
+  background-color: #FFD459;
   padding-bottom: 2rem;
+  z-index: 40;
 }
+
+#thesis-page h3 {
+  display: block;
+  background-color: #FFD459;
+}
+
+#thesis-body {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+first-column, second-column {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+}
+
 
 #thesis-page .video-container {
   width: 55%; /* full-size with borders: 611.2px (59.6875%) */
   height: auto;
-  /* border: 1px solid #FFCB55; */
 }
 
 /* width and height set here so percentages can be used and video size is responsive to browser size. */
 video {
   width: 100%; /* 100% of 55% declared in .video-container */
   height: auto;
-  padding-right: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 0.3rem solid #4C471A; /* not specified, but it makes the video 'pop' */
 }
 
 #thesis-page #second-column {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Put contents at vertical center */
+  justify-content: flex-start; /* Put contents at top */
   width: 35%; /* 40% specified but not correct (see :first-child comment) */
   height: auto;
-  background-color: #FFCB55;
-  color: #615E37;
-  /*
-  padding-top: 4rem; *//* to adjust vertical center due to vertical offset for header.
-  padding-right: 3.5rem;*/
+  margin-left: 1.5rem;
+  background-color: #FFD459;
+  color: #4C471A;
 }
 
-#thesis-page article {
+#second-column article {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 1rem;
   overflow: hidden;
 }
 
-#thesis-page article img {
-  width: 35%;
-  height: auto;
+#second-column article:first-child {
+  background-color: #4C471A;
+  color: #FFD459;
 }
 
-#thesis-page article div {
-  background-color: #FFCB55;
+#second-column img {
+  width: 35%; /* 35% of #second-column */
+  height: auto;
+  padding-right: 1rem;
+}
+
+#second-column article div {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---------------- Footer Page ---------------- */
@@ -392,8 +485,8 @@ footer {
   justify-content: space-between;
   padding-top: 1rem;
   height: 3rem;
-  color: #FFCB55;
-  background-color: #615E37;
+  color: #FFD459;
+  background-color: #4C471A;
 }
 
 footer span {
@@ -405,6 +498,6 @@ footer nav {
 }
 
 footer a {
-  color: #FFCB55;
+  color: #FFD459;
   margin-left: 1rem;
 }
