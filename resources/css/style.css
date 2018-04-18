@@ -180,12 +180,12 @@ header { /* header contains grandchildren #logo and nav */
 
 #logo #colmar {
   font-weight: 700;
-  color: var(--dark-txt-color);
+  color: var(--dark-txt-color, black);
 }
 
 #logo #academy {
   font-weight: 400;
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
 }
 
 header nav {
@@ -197,7 +197,7 @@ header nav {
 this looks crowded and inaccessible, so I've added space. */
 header a {
   display: inline-block; /* allows us to manipulate size of inline element */
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   background-color: var(--theme-color); /* background color for text extends through padding but not margin */
   height: 4rem; /* extends the background color from top to bottom */
   line-height: 4rem; /* vertically centers the text */
@@ -211,7 +211,7 @@ header nav a:first-child {
 }
 
 header a:hover {
-  font-size: 1.2rem;
+  color: var(--dark-txt-color, black);
 }
 
   .mobile {
@@ -229,7 +229,7 @@ header a:hover {
 @media only screen and (max-width: 760px) {
   .desktop {
     display: none;
-  }
+  }x
 
   #mobile-header-page {
     display: -webkit-box;
@@ -315,7 +315,7 @@ header a:hover {
 }
 
 #landing-page button { /* the button is less basic than the one shown on the redline */
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   background-color: var(--theme-color);
   padding: 8px 48px;
   margin: 16px 0;
@@ -326,7 +326,7 @@ header a:hover {
 }
 
 #landing-page button:hover {
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   background-color: var(--faded-theme-color);
 }
 
@@ -388,7 +388,7 @@ header a:hover {
 }
 
 #practicing-page h3 {
-  color: var(--dark-txt-color);
+  color: var(--dark-txt-color, black);
 }
 
 #practicing-page .col2 {
@@ -436,7 +436,7 @@ header a:hover {
 
 /*  These were not shown as buttons in the redline, but they show up better this way, and look more professional. */
 #practicing-page button {
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   background-color: var(--theme-color);
   padding: 8px 48px;
   margin: 8px 0;
@@ -447,7 +447,7 @@ header a:hover {
 }
 
 #practicing-page button:hover {
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   background-color: var(--faded-theme-color);
 }
 
@@ -707,7 +707,7 @@ video {
 
 #thesis-body .col2 article:first-child {
   background-color: var(--bg-color2);
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
 }
 
 #thesis-body .col2 img {
@@ -768,7 +768,7 @@ footer {
   padding-bottom: 16px;
   padding-bottom: 1rem;
   /* height: 3rem; */
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   background-color: var(--bg-color2);
 }
 
@@ -783,7 +783,7 @@ footer nav {
 }
 
 footer a {
-  color: var(--light-txt-color);
+  color: var(--light-txt-color, white);
   margin-left: 16px;
   margin-left: 1rem;
 }
