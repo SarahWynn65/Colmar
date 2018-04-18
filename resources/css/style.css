@@ -68,52 +68,67 @@ html {
 
 h2 {
   font-family: 'Philosopher', sans-serif;
+  font-size: 32px;
   font-size: 2rem;
+  padding-top: 32px;
   padding-top: 2rem;
+  padding-bottom: 32px;
   padding-bottom: 2rem;
   text-align: center; /* redline shows this left-aligned which doesn't look as good, to me. */
 }
 
 h3 {
   font-family: 'Philosopher', sans-serif;
+  font-size: 24px;
   font-size: 1.5rem;
   font-weight: bold;
+  padding-top: 32px;
   padding-top: 2rem;
+  padding-bottom: 24px;
   padding-bottom: 1.5rem;
   text-align: center; /* Looks nicer than the left-aligned heading specified */
 }
 
 h4 {
   font-family: 'Philosopher', sans-serif;
+  font-size: 19.2px;
   font-size: 1.2rem;
   font-weight: bold;
+  padding-bottom: 8px;
   padding-bottom: 0.5rem;
 }
 
 h5 {
   font-family: 'Philosopher', sans-serif;
   line-height: 1.2;
+  padding-bottom: 8px;
   padding-bottom: 0.5rem;
 }
 
 h6 {
   display: block;
   text-align: center; /* Looks nicer than the left-aligned heading specified */
+  padding-bottom: 32px;
   padding-bottom: 2rem;
+  padding-top: 32px;
   padding-top: 2rem;
   font-family: 'Philosopher', sans-serif;
+  font-size: 32px;
   font-size: 2rem;
   font-weight: bold;
 }
 
 p {
+  font-size: 16px;
   font-size: 1rem;
   line-height: 1.2;
 }
 
 blockquote {
+  font-size: 16px;
   font-size: 1rem;
   line-height: 1.2;
+  padding-bottom: 24px;
   padding-bottom: 1.5rem;
 }
 
@@ -130,16 +145,29 @@ header { /* header contains grandchildren #logo and nav */
 }
 
 #desktop-header-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; /* flex rather than inline-flex as we want it to span the whole page. */
-  flex-direction: row;
-  justify-content: space-between; /* Put #logo at one end and nav at other. */
-  align-items: center; /* Center content (#logo and nav) vertically. */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /* Put #logo at one end and nav at other. */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* Center content (#logo and nav) vertically. */
   height: 100%; /* same height as header */
 }
 
 #desktop-header-page #logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;  /* Center logo and text vertically. */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;  /* Center logo and text vertically. */
   padding-left: 1.5rem;
   font-size: 2rem;
   font-family: 'Philosopher', sans-serif;
@@ -204,10 +232,18 @@ header a:hover {
   }
 
   #mobile-header-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; /* flex rather than inline-flex as we want it to span the whole page. */
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center; /* Center content vertically. */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; /* Center content vertically. */
     height: 100%; /* same height as header */
     background-color: var(--theme-color);
     height: 4rem;
@@ -221,10 +257,19 @@ header a:hover {
 /* The specs specify 60% width for img, and 40% width for text section but we need to include margins/borders/padding */
 
 #landing-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   background-color: var(--bg-color2);
 }
@@ -232,26 +277,40 @@ header a:hover {
 #landing-page img {
   width: 55%; /* 55% plus borders = 611.2px (59.6875% of site-container) */
   height: auto;
+  margin-top: 96px;
   margin-top: 6rem; /* 4rem to account for fixed header height and 2rem margin */
+  margin-right: 24px;
   margin-right: 1.5rem;
+  margin-bottom: 32px;
   margin-bottom: 2rem;
+  margin-left: 24px;
   margin-left:1.5rem;
 }
 
 #landing-page div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 35%;
   height: auto;
   color: var(--light-bg-color);
   background-color: var(--bg-color2);
-  flex-wrap: wrap;
-  align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 #landing-page p {
   text-align: center;
+  padding-bottom: 24px;
   padding-bottom: 1.5rem;
 }
 
@@ -259,6 +318,7 @@ header a:hover {
   color: var(--light-txt-color);
   background-color: var(--theme-color);
   padding: 8px 48px;
+  margin: 16px 0;
   margin: 1rem 0;
   border: none;
   border-radius: 5px;
@@ -272,8 +332,13 @@ header a:hover {
 
 @media only screen and (max-width: 760px) {
   #landing-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     /* justify-content: flex-start; */
     /* align-items: center; */
     width: 100%;
@@ -298,15 +363,23 @@ header a:hover {
 /*   <!------ Practicing Page ------>   */
 
 #practicing-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-color: var(--bg-color1);
 }
 
 #practicing-page .col1 {
   width: 55.3125%; /* Redline says 60%, but margins take up some of the space and this represents size of image */
   height: auto;
+  padding: 32px 24px;
   padding: 2rem 1.5rem;
 }
 
@@ -319,18 +392,33 @@ header a:hover {
 }
 
 #practicing-page .col2 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 38.4375%; /* col2 width excluding margins as a percentage of whole site width */
   height: auto;
+  padding-top: 16px;
   padding-top: 1rem; /* used to put pictures in col1 and col2 at same height */
 }
 
 #practicing-page .col2 article {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
 }
 
@@ -338,6 +426,7 @@ header a:hover {
   max-width: 35%;
   height: auto;
   overflow: hidden;
+  padding: 16px;
   padding: 1rem;
 }
 
@@ -350,6 +439,7 @@ header a:hover {
   color: var(--light-txt-color);
   background-color: var(--theme-color);
   padding: 8px 48px;
+  margin: 8px 0;
   margin: 0.5rem 0;
   border: none;
   border-radius: 5px;
@@ -373,8 +463,14 @@ header a:hover {
   }
 
   #practicing-page .col2 article {
-    flex-direction: column;
-    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+                -ms-grid-row-align: flex-start;
+            align-items: flex-start;
     padding-top: 1rem;
     padding-right: 1rem;
     padding-bottom: 3rem;
@@ -407,7 +503,9 @@ header a:hover {
 #learning-page {
   background-color: var(--bg-color2);
   z-index: 30;
+  padding-left: 56px;
   padding-left: 3.5rem; /* not actually required as it's done automatically */
+  padding-right: 56px;
   padding-right: 3.5rem;
 }
 
@@ -417,20 +515,32 @@ header a:hover {
 }
 
 #gallery-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   /* padding-top: 2rem; */
 }
 
 #gallery-section article {
   display: inline-block;
   border: 5px ridge #2E2B10;
+  margin-left: 16px;
   margin-left: 1rem;
+  margin-right: 16px;
   margin-right: 1rem;
+  margin-bottom: 32px;
   margin-bottom: 2rem;
   /* width: 17rem; *//* site-container minus img widths and margins divided by 3 */
+  width: 242px;
   width: 15.125rem; /* reduced width to accomodate article borders */
   overflow: hidden;
 }
@@ -474,10 +584,15 @@ header a:hover {
 }
 
 #gallery-section article .text {
+  height: 130px;
   height: 8.125rem;
+  padding-top: 16px;
   padding-top: 1rem;
+  padding-left: 16px;
   padding-left: 1rem;
+  padding-right: 16px;
   padding-right: 1rem;
+  padding-bottom: 24px;
   padding-bottom: 1.5rem;
   background-color: var(--bg-color1);
 }
@@ -505,10 +620,17 @@ header a:hover {
 /*   <!------ Thesis Page ------>   */
 
 #thesis-page { /* h6 heading plus thesis-body video & text columns */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-shrink: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   background-color: var(--bg-color1);
+  padding-bottom: 32px;
   padding-bottom: 2rem;
   z-index: 40;
 }
@@ -519,14 +641,26 @@ header a:hover {
 }
 
 #thesis-body { /* col1 and col2 */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 #thesis-body .col1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 24px;
   margin-left: 1.5rem;
+  margin-right: 24px;
   margin-right: 1.5rem;
   width: 57.19%; /* 60% of [full site-container (1024px) minus the margins (48px)] */
 }
@@ -535,22 +669,38 @@ header a:hover {
 video {
   width: 98.29%; /* video + borders = 100% of .col1 */
   height: auto;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem; /* separates video from text */
   border: 5px ridge #2E2B10; /* border not specified, but it makes the video 'pop'. */
 }
 
 #thesis-body .col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Put contents at top */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; /* Put contents at top */
   width: 38.125%; /* 40% of full browser window minus the margins */
   height: auto;
 }
 
 #thesis-body .col2 article {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
   padding: 1rem;
   overflow: hidden;
 }
@@ -563,12 +713,18 @@ video {
 #thesis-body .col2 img {
   width: 35%; /* 35% of .col2 */
   height: auto;
+  padding-right: 16px;
   padding-right: 1rem;
 }
 
 #thesis-body .col2 article div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media only screen and (max-width: 740px) {
@@ -597,10 +753,19 @@ video {
 
 /*   <!------ Footer Page ------>   */
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 16px;
   padding-top: 1rem;
+  padding-bottom: 16px;
   padding-bottom: 1rem;
   /* height: 3rem; */
   color: var(--light-txt-color);
@@ -608,14 +773,17 @@ footer {
 }
 
 footer span {
+  padding-left: 24px;
   padding-left: 1.5rem;
 }
 
 footer nav {
+  margin-right: 24px;
   margin-right: 1.5rem;
 }
 
 footer a {
   color: var(--light-txt-color);
+  margin-left: 16px;
   margin-left: 1rem;
 }
